@@ -1,9 +1,7 @@
 puts "What is the first number ?"
-firstn = gets.chomp
-firstn = firstn.to_i
+firstn = gets.chomp.to_i
 puts "What is the second number ?"
-secondn = gets.chomp
-secondn = secondn.to_i
+secondn = gets.chomp.to_i
 result1 = (firstn + secondn)
 result2 = (firstn - secondn)
 result3 = (firstn * secondn)
