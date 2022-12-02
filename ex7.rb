@@ -8,6 +8,6 @@ def areaF(lenght,width)
     (lenght * width)
 end
 def areaM(areaF(lenght,width),CONST)
-    (areaF(lenght,width)*CONST).round(2)
+    areaF(lenght,width)*CONST.round(2)
 end
 puts "The are is:\n#{areaF(lenght,width)} square feet\n#{areaM(areaF(lenght,width),CONST)} square meters"
