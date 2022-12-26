@@ -1,16 +1,26 @@
+subtotal = 0
+cont = 0
 loop do
     puts "Enter the price of item :"
-    price = gets.chomp.to_i
-    puts "Enter the quantity of item :"
-    quantity = gets.chomp.to_i
-    if  quantity == 0
-        break
+    price = gets.chomp
+    if price =~ /^-?[0-9]+$/
+        puts "Enter the quantity of item :"
+        quantity = gets.chomp
+        if quantity == 0
+            break
+        end
+        if quantity.to_s =~ /^-?[0-9]+$/
+            total = (price.to_i * quantity.to_i)
+            subtotal = (total + subtotal)
+        else
+            puts "not a valid input"
+        end
+    else
+    puts "not a valid input"
     end
-    subtotal = 0
-    total = (price * quantity)
-    subtotal = (total + subtotal)
+    cont = cont + 1
 end
 CONST = 0.055
 tax = (subtotal * CONST).round(2)
 total = (subtotal + tax).round(2)
-puts "total of items: 3\nSubtotal: $#{subtotal}\nTax: $#{tax}\nTotal: $#{total}"
+puts "total of items: #{cont} \nSubtotal: $#{subtotal}\nTax: $#{tax}\nTotal: $#{total}"
